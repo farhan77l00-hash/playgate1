@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PLAYGATE | متجر الألعاب الرقمية المرخصة</title>
+<meta name="description" content="PLAYGATE: ألعاب ومنتجات رقمية مرخصة بتسليم آمن بعد التحقق من الدفع.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="/">PLAY<b>GATE</b></a>
+  <div class="search"><input id="q" type="search" placeholder="ابحث عن لعبة…" aria-label="بحث"></div>
+  <button class="btn ghost sm" id="trackBtn">تتبع طلبك</button>
+  <button class="btn cartbtn" id="cartBtn" aria-label="السلة">السلة<span id="cartCount">0</span></button>
+</div></header>
+
+<div class="hero"><div class="wrap"><h1>عالم ألعابك أقرب مما تتخيل</h1><p>ألعاب ومنتجات رقمية مرخصة، وتسليم بعد التحقق من الدفع.</p></div></div>
+
+<main class="wrap">
+  <div class="cats" id="cats"></div>
+  <section><h2>الألعاب المميزة</h2><div class="grid" id="featured"></div></section>
+  <section><h2>العروض</h2><div class="grid" id="offers"></div></section>
+  <section><h2>أحدث المنتجات</h2><div class="grid" id="latest"></div></section>
+</main>
+<footer><div class="wrap">© PLAYGATE — جميع المنتجات مرخصة وتُسلَّم بعد تأكيد الدفع.</div></footer>
+<a class="wa" id="wa" target="_blank" rel="noopener">واتساب</a>
+
+<aside class="drawer" id="cartDrawer" aria-label="سلة المشتريات">
+  <div class="row"><h2 style="margin:0">سلة المشتريات</h2><button class="btn ghost sm" id="closeCart">إغلاق</button></div>
+  <div class="items" id="cartItems"></div>
+  <div class="row"><b>الإجمالي</b><b class="price" id="total"></b></div>
+  <button class="btn" id="checkout">إتمام الطلب</button>
+</aside>
+
+<div class="modal" id="pModal"><div class="box"><div id="pBody"></div><button class="btn ghost sm" data-close style="margin-top:12px">إغلاق</button></div></div>
+<div class="modal" id="coModal"><form class="box" id="coForm">
+  <h2>بيانات الطلب</h2>
+  <label for="cName">الاسم</label><input id="cName" required minlength="2" autocomplete="name">
+  <label for="cPhone">رقم الجوال (واتساب)</label><input id="cPhone" required inputmode="tel" pattern="[0-9+ ]{9,15}" autocomplete="tel">
+  <div class="notice">لا نطلب بيانات بطاقات أو كلمات مرور بنكية.</div>
+  <button class="btn" style="width:100%">تأكيد الطلب</button>
+</form></div>
+<div class="modal" id="doneModal"><div class="box"><div id="doneBody"></div><button class="btn ghost sm" data-close style="margin-top:12px">إغلاق</button></div></div>
+<div class="modal" id="trModal"><form class="box" id="trackForm">
+  <h2>تتبع الطلب</h2>
+  <label for="tNo">رقم الطلب</label><input id="tNo" required>
+  <label for="tPhone">رقم الجوال</label><input id="tPhone" required>
+  <button class="btn">عرض الحالة</button><p id="trackRes" style="margin-top:10px"></p>
+  <button type="button" class="btn ghost sm" data-close>إغلاق</button>
+</form></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="js/config.js"></script><script src="js/common.js"></script><script src="js/app.js"></script>
+</body></html>
